@@ -1,4 +1,4 @@
-FROM node:21.4.0
+FROM node:21.4.0-bullseye-slim
 WORKDIR /app
 EXPOSE 3000
 COPY . .
