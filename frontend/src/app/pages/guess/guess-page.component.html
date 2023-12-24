@@ -1,0 +1,19 @@
+<div class="guess-content">
+    <h1>Wer ist der Mörder?</h1>
+    <p>Wichtiger Hinweis</p>
+    <p>Du kannst dieses Rätsel nur einmal lösen. Also wähle weise.</p>
+    <div class="input-group column">
+        <mat-form-field appearance="fill">
+            <select matNativeControl required [value]="selectedValue" (change)="onSelectionChange($event)">
+                <option value="Viktor">Viktor</option>
+                <option value="Veronika">Veronika</option>
+                <option value="Daphne">Daphne</option>
+                <option value="Sergei">Sergei</option>
+                <option value="Peter">Peter</option>
+                <option value="Robert">Robert</option>
+                <option value="Robert">Mannfred</option>
+              </select>
+        </mat-form-field>
+    </div>
+    <button mat-raised-button color="primary" (click)="enterGuess()">Lösen</button>
+</div>

@@ -1,0 +1,13 @@
+.tab-title{
+    font-size: 32px;
+}
+.tab-content{
+    padding: 16px;
+}
+
+
+::ng-deep {
+    .mdc-tab__text-label{
+        font-size: 20px;
+    }
+}

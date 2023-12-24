@@ -18,3 +18,4 @@ export const environment = {
     doc_bucket_id: '{{YOUR GCP PRIVATE DOCS BUCKET ID}}', //DO NOT EXPOSE THIS VALUE IN A PROD ENVIRONMENT!
   },
 };
+  

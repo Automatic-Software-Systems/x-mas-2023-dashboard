@@ -1,0 +1,18 @@
+// custom-theme.scss
+
+@import '@angular/material/theming';
+
+// Define your custom color palette
+$custom-primary: mat-palette($mat-orange, 500, 300, 700);
+$custom-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// Combine color palettes into a theme
+$custom-theme: mat-dark-theme($custom-primary, $custom-accent);
+
+// Include the custom theme
+@include angular-material-theme($custom-theme);
+
+body {
+    background-color: black;
+    color: rgb(153, 153, 153);
+}

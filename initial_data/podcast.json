@@ -1,0 +1,85 @@
+  [ {
+    "name":"Episode 3",
+    "audioUrl":"https://ass-projects.de/founders/xmas-2023-files/-/raw/main/audio/IntroPodcast.mp3",
+    "imageUrl":"",
+    "enabled":false,
+    "_id":"intro",
+    "number":0
+    },
+    {
+        "name":"Mörder Festgenommen",
+        "audioUrl":"https://ass-projects.de/founders/xmas-2023-files/-/raw/main/audio/Station9.mp3",
+        "imageUrl":"",
+        "enabled":false,
+        "_id":"winner",
+        "number":10
+    },
+    {
+        "name":"Amateure wollen Unschuldigen verhaften",
+        "audioUrl":"https://ass-projects.de/founders/xmas-2023-files/-/raw/main/audio/Station10.mp3",
+        "imageUrl":"",
+        "enabled":false,
+        "_id":"wellYouTried",
+        "number":11
+    },
+    {
+        "name":"Leiche auf Friedhof gefunden",
+        "audioUrl":"https://ass-projects.de/founders/xmas-2023-files/-/raw/main/audio/Station1_new.mp3",
+        "imageUrl":"",
+        "enabled":false,
+        "_id":"hof",
+        "number":1
+    },
+    {
+        "name":"Streit beim Denkmal",
+        "audioUrl":"https://ass-projects.de/founders/xmas-2023-files/-/raw/main/audio/station2_new.mp3",
+        "imageUrl":"",
+        "enabled":false,
+        "_id":"statue",
+        "number":2
+    },    {
+        "name":"Die Brücke",
+        "audioUrl":"https://ass-projects.de/founders/xmas-2023-files/-/raw/main/audio/station3_new.mp3",
+        "imageUrl":"",
+        "enabled":false,
+        "_id":"bahn",
+        "number":3
+    },    {
+        "name":"Vögel beobachten",
+        "audioUrl":"https://ass-projects.de/founders/xmas-2023-files/-/raw/main/audio/Station5.mp3",
+        "imageUrl":"",
+        "enabled":false,
+        "_id":"tower",
+        "number":4
+    },    {
+        "name":"Die Liebschaft",
+        "audioUrl":"https://ass-projects.de/founders/xmas-2023-files/-/raw/main/audio/Station6.mp3",
+        "imageUrl":"",
+        "enabled":false,
+        "_id":"wohnmobil",
+        "number":5
+    },    {
+        "name":"Der Ehestreit",
+        "audioUrl":"https://ass-projects.de/founders/xmas-2023-files/-/raw/main/audio/Station7.mp3",
+        "imageUrl":"",
+        "enabled":false,
+        "_id":"schule",
+        "number":6
+    },
+    {
+        "name":"Showdown vorm Altar",
+        "audioUrl":"https://ass-projects.de/founders/xmas-2023-files/-/raw/main/audio/Station8.mp3",
+        "imageUrl":"",
+        "enabled":false,
+        "_id":"kirche",
+        "number":8
+    },
+    {
+        "name":"Rock and Roll",
+        "audioUrl":"https://ass-projects.de/founders/xmas-2023-files/-/raw/main/audio/station4_new.mp3",
+        "imageUrl":"",
+        "enabled":false,
+        "_id":"konzert",
+        "number":7
+    }
+  ]

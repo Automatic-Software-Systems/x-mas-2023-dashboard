@@ -1,0 +1,20 @@
+[
+  {
+    "_id": "GrandMaster",
+    "userName": "GrandMaster",
+    "password": "$2b$10$A6usj/.VuEk4Nrs5CseiE.nNj1Nf3YidTThACRdFtc2t7tl1Vj2mG",
+    "logedIn": true,
+    "finalGuess": "",
+    "stations": [],
+    "userType": 1032
+  },
+  {
+    "_id": "Marcel",
+    "userName": "Marcel",
+    "password": "$2a$10$Vg75cp.NpTowBKhmcvkYdeWSooqqr.E3SUzvzjUpqyuq0jOyn7Wy2",
+    "logedIn": true,
+    "finalGuess": "",
+    "stations": [],
+    "userType": 1
+  }
+]

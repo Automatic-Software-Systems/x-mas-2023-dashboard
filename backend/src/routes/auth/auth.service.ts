@@ -5,12 +5,8 @@ import {
   UnprocessableEntityException,
 } from '@nestjs/common';
 import {
-  AclInviteInterface,
-  OrganizationInterface,
   SessionInterface,
-  SuccessMessageInterface,
   TokenInterface,
-  UserInterface,
   LodgeUserInterface
 } from '../../../../shared/interfaces';
 import { EmailOnlyDto, LoginDto, SignupDto } from './auth.dto';

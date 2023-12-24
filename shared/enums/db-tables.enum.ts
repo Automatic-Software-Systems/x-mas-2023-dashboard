@@ -3,4 +3,5 @@ export enum DatabaseTables {
   ORGANIZATIONS = "users",
   PODCAST = "podcast",
   USERS = "users",
+  CHARACTERS = "characters"
 }

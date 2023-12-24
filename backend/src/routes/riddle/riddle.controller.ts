@@ -1,13 +1,15 @@
 import { Body, Controller, Param, Post, Get, Res } from '@nestjs/common';
 import { RiddleService } from './riddle.service';
 import {
-  TokenInterface,
+  TokenInterface
 } from '../../../../shared/interfaces';
+import {CharacterInterface} from '../../../../shared/interfaces/character.interface'
 import {
   ForbiddenException,
 } from '@nestjs/common';
 import { PodcastDTO } from './riddle.dto';
 import { TokenData } from '../../utility/decorators';
+import { Console } from 'console';
 
 @Controller('riddle')
 export class RiddleController {
@@ -26,6 +28,11 @@ export class RiddleController {
   @Get("/search/podcasts")
   getPodcasts(@TokenData() token:TokenInterface):Promise<PodcastDTO[]>{
       return this.riddleService.getPodcasts(token);
+  }
+
+  @Get("/search/characters")
+  getCharacters(@TokenData() token:TokenInterface):Promise<CharacterInterface[]>{
+      return this.riddleService.getCharacters(token);
   }
 
   @Get("/download/certificate")

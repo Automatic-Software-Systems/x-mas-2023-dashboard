@@ -4,6 +4,9 @@
   "sourceRoot": "src",
   "entryFile": "backend/src/main",
   "compilerOptions": {
+    "assets": [
+      { "include": "../public/**", "outDir": "dist/backend/public", "watchAssets": true }
+    ],
     "deleteOutDir": true
   }
 }

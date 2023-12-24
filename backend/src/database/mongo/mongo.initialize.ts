@@ -1,7 +1,8 @@
 import { MongoClient } from 'mongodb';
 import { environment } from '../../../environments/environment';
+import { prodEnvironment } from '../../../environments/environment-prod';
 
-const mongoClient = new MongoClient(environment.database.mongo_uri, {});
+const mongoClient = new MongoClient(process.env.ENV == 'prod' ? prodEnvironment.database.mongo_uri : environment.database.mongo_uri, {});
 
 let _db;
 
@@ -13,7 +14,7 @@ const initMongoDatabase = () => {
   return mongoClient
     .connect()
     .then((client) => {
-      _db = client.db(environment.database.name);
+      _db = client.db(process.env.ENV == 'prod' ? prodEnvironment.database.name : environment.database.name);
       return _db;
     })
     .catch((error) => {

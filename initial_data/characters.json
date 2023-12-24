@@ -1,0 +1,65 @@
+[{
+    "name":"Viktor",
+    "imgUrl":"https://ass-projects.de/founders/xmas-2023-files/-/raw/main/images/ViktorEisenhart.png",
+    "description":"Viktor Eisenhart war Vater von zwei Realschulkindern, erfolgreicher Bauunternehmer und leidenschaftlicher Sportschütze. Er wurde im alter von 54 Jahren tot aufgefunden. Schwere Aufprallwunden waren die Todesursache, ganz klar ein Mord. Er hatte einen Flyer eines Blumenladens, hunbderte Eure und eine Rolex bei sich.",
+    "enabled":false,
+    "station":"hof",
+    "_id":1
+},
+{
+    "name":"Veronika",
+    "imgUrl":"https://ass-projects.de/founders/xmas-2023-files/-/raw/main/images/VeronicaEisenhart.png",
+    "description":"Veronika Eisenhart war die Ehefrau von Viktor. Sie war lange Mitglied im Naturschutbund. Vor kuren wurde sie aus den Verein geworfen. Schuld war ihr Eheman.",
+    "enabled":false,
+    "station":"tower",
+    "_id":6
+},
+{
+    "name":"Daphne",
+    "imgUrl":"https://ass-projects.de/founders/xmas-2023-files/-/raw/main/images/Daphne.png",
+    "description":"Daphne braucht keine Vorstellung, jeder in Radolfzell und Umgebung kennt die 34 Jahre alte Kellnerin aus den Wohnwagen. Sie ist bei jeden Event in Radolfzell dabei.",
+    "enabled":false,
+    "station":"wohnmobil",
+    "_id":7
+},
+{
+    "name":"Sergei",
+    "imgUrl":"https://ass-projects.de/founders/xmas-2023-files/-/raw/main/images/SergeiBetonova.png",
+    "description":"Sergei Betonova ist mit seinen 18 Jahren der jüngste Mitarbeiter im Unternehmen 'Eisenhart'. Er ist sogar die rechte Hand von Viktor gewesen.",
+    "enabled":false,
+    "station":"bahn",
+    "_id":4
+},
+{
+    "name":"Peter",
+    "imgUrl":"https://ass-projects.de/founders/xmas-2023-files/-/raw/main/images/PeterSchulze.png",
+    "description":"Peter Schulze ist ein Beamter, welcher für die Stadt Radolfzell arbeitet. Er ist verantwortlich für die diversen Straßen und deren Wartung. Er ist auch ein guter Freund von Viktor.",
+    "enabled":false,
+    "station":"statue",
+    "_id":2
+},
+{
+    "name":"Robert",
+    "imgUrl":"https://ass-projects.de/founders/xmas-2023-files/-/raw/main/images/RobertBaumeister.png",
+    "description":"Robert Baumeister ist ein weiterer Unternehmer und Sportschütze. Er war der große Rivale und Feind von Viktor. Es galt allgemein als dumme Idee die beiden zusammen zu setzen oder gar alleine zu lassen.",
+    "enabled":false,
+    "station":"statue",
+    "_id":3
+},
+{
+    "name":"Mannfred",
+    "imgUrl":"https://ass-projects.de/founders/xmas-2023-files/-/raw/main/images/Manny.png",
+    "description":"Der Mann, die Legende: Mannfred Häcker! Der Legendäre Saxophon Spieler des Musikvereins Liggeringen hat sich vor kurzen mit Viktor geprügelt. Dabei ging es um pfusch beim Bau.",
+    "enabled":false,
+    "station":"konzert",
+    "_id":5
+},
+{
+    "name":"Erik and Britta",
+    "imgUrl":"https://ass-projects.de/founders/xmas-2023-files/-/raw/main/images/BrittaUndErik.png",
+    "description":"Unsere Moderatoren, Erik Albrecht ehamliger Polizist und Britta Bannenberg eine erfahrene Kriminologin. Gemeinsam moderieren sie jetzt seit 3 Jahren diverse Podcasts zum den Themen Kriminalität, Datenschutz und Hautpflege.",
+    "enabled":false,
+    "station":"intro",
+    "_id":0
+}
+]

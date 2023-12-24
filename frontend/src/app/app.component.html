@@ -1,10 +1,21 @@
 <ng-container *ngIf="authenticated$ | async; else login">
-  <div class="row default" style="min-height: 100%">
-    <nav-bar id="desktop-nav"></nav-bar>
-    <nav-bar-mobile id="mobile-nav"></nav-bar-mobile>
-    <div class="app">
-      <ng-template *ngTemplateOutlet="outlet"></ng-template>
-    </div>
+  <div class="app">
+    <p>
+      <mat-toolbar color="primary">
+        <a [routerLink]="['/']" ><span class="toolbar-title">Dashbaord der Lodge</span></a>
+        <span class="example-spacer"></span>
+        <button mat-icon-button class="example-icon" aria-label="Lösen" (click)="navigateToGuess()">
+          <mat-icon>key</mat-icon>
+        </button>
+        <span *ngIf="user$ | async as user">
+          {{user.userName}}
+        </span>
+        <button mat-icon-button class="example-icon" aria-label="Abmelden" (click)="logout()">
+          <mat-icon>logout</mat-icon>
+        </button>
+      </mat-toolbar>
+    </p>
+    <ng-template *ngTemplateOutlet="outlet"></ng-template>
   </div>
 </ng-container>
 <ng-template #login>
@@ -14,8 +25,6 @@
     </div>
   </div>
 </ng-template>
-
-
 <ng-template #outlet>
   <router-outlet></router-outlet>
 </ng-template>

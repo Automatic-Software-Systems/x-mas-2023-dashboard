@@ -107,3 +107,23 @@ Please feel free to copy or fork this repo for your own use if you would like to
 starter Angular/NestJs template with different providers. I have just put this up because I found myself recreating the
 same proxy configs, routes, and general services across multiple projects and I hope that maybe this can help you save
 the time it is saving me for your future projects.
+
+
+# Development
+
+## Run Mongo as Docker
+```
+docker-compose -f mongo-deb-db.yml up
+```
+
+```
+docker-compose -f mongo-deb-db.yml start
+```
+
+```
+docker-compose -f mongo-deb-db.yml stop
+```
+
+```
+docker-compose -f mongo-deb-db.yml down
+```

@@ -1,0 +1,33 @@
+version: '3.1'
+
+services:
+  mongo-db:
+    image:  mongo:7.0.4
+    container_name: mongo_db
+    networks:
+      - useerdb
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data/db:/data/db
+      - ./initial_data/:/docker-entrypoint-initdb.d/
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: master
+      MONGO_INITDB_ROOT_PASSWORD: 391f01c8-f4c2-49b4-9051-5b65a3595d5f
+    user: root
+    restart: always
+
+  riddle:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      - useerdb
+    ports:
+      - "8282:3000"
+    command: npm run start
+    restart: always
+
+networks:
+  useerdb:
+    driver: bridge

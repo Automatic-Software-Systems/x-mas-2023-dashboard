@@ -4,10 +4,9 @@ import {
   InternalServerErrorException,
   NotFoundException,
 } from '@nestjs/common';
-import { ObjectId } from 'mongodb';
 import { TokenInterface, LodgeUserInterface} from '../../../../shared/interfaces';
-import { UserEditDto, SignupMemberDto } from './user.dto';
-import { DatabaseTables, TypesEnum, UserTypesEnum } from '../../../../shared/enums';
+import { SignupMemberDto } from './user.dto';
+import { DatabaseTables, TypesEnum } from '../../../../shared/enums';
 import { DatabaseService } from '../../database';
 @Injectable()
 export class UserService {
@@ -20,7 +19,7 @@ export class UserService {
   }
 
   async getAllMembers():Promise<LodgeUserInterface[]>{
-      const allUsers = (await this.db.find({userType:1}).toArray())
+      const allUsers = (await this.db.find({userType:{$ne: 1032}}).toArray())
        allUsers.forEach(element => {
         element.password = "";
         element.finalGuess = ""

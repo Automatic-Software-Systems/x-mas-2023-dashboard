@@ -1,50 +1,30 @@
 <div class="page">
-  <div class="sign-in-card row ">
-    <div class="card-content">
-      <div class="header">
-        <h1>Welcome to {{appName}}</h1>
-      </div>
+  <mat-card class="sign-in-card">
+    <mat-card-header>
+      <h1>{{appName}} heißt dich Wilkommen</h1>
+    </mat-card-header>
+    <mat-card-content>
       <form [formGroup]="login">
         <div class="input-group column">
-          <label for="email">Email</label>
-          <input
-            type="text"
-            id="email"
-            formControlName="email"
-            autocomplete="email"
-            required
-            [ngClass]="{ error: loginError }"
-          />
+          <label for="password">Benutzername</label>
+          <mat-form-field appearance="fill">
+            <input type="text" id="name" formControlName="name" autocomplete="name" required matInput>
+          </mat-form-field>
         </div>
         <div class="input-group column">
-          <label for="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            formControlName="password"
-            autocomplete="current-password"
-            required
-            [ngClass]="{ error: loginError }"
-          />
+          <label for="password">Passwort</label>
+          <mat-form-field appearance="fill">
+            <input type="password" id="password" formControlName="password" required matInput>
+          </mat-form-field>
         </div>
         <p class="error" *ngIf="loginError">
           {{ loginError }}
         </p>
-
-        <button class="btn primary" (click)="attemptLogin()">Log In</button>
+        <button mat-raised-button color="primary" (click)="attemptLogin()">Anmelden</button>
       </form>
-      <div class="signup-link column">
-        <a routerLink="/welcome/signup">New User? Get Started Here.</a>
-        <a routerLink="/welcome/request-reset">Oh no! I forgot my password.</a>
-      </div>
-    </div>
-  </div>
-  <div class="welcome-image fade-in">
-    <img
-      class="img-hero"
-      alt="a lightbulb held by a person"
-      src="{{ imageUrl }}"
-    />
+    </mat-card-content>
+  </mat-card>
+  <div class="welcome-image">
+    <img class="img-hero" alt="a lightbulb held by a person" src="{{ imageUrl }}" />
   </div>
 </div>
-

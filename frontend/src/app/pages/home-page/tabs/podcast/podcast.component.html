@@ -1,0 +1,27 @@
+<div class="content" fxLayout="row wrap" fxLayoutGap="16px grid" *ngIf="$podcasts | async as podcasts" >
+    <div [fxFlex]="(100/gridColumns) + '%'" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let podcast of podcasts">
+        <mat-card [ngClass]="{ 'disabled-podcast': !podcast.enabled }">
+            <mat-card-header>
+                <h3>{{podcast.name}}</h3>
+            </mat-card-header>
+            <ng-container *ngIf="podcast.imageUrl; else noImage" >
+                <img class="podcast-image" mat-card-image src="{{podcast.imageUrl}}" />
+            </ng-container>
+            <ng-template #noImage>
+                <img class="podcast-image" mat-card-image src="https://ass-projects.de/founders/xmas-2023-files/-/raw/main/images/podcast.png" />
+            </ng-template>
+            <mat-card-content>
+            </mat-card-content>
+            <mat-card-actions>
+                    <audio controls class="audioPlayer">
+                        <source src="{{podcast.audioUrl}}" type="audio/mp3">
+                    </audio>
+                    <ng-container *ngIf="podcast.enabled && (podcast.number === 10 || podcast.number === 11)" >
+                        <button mat-icon-button class="example-icon" aria-label="Download" (click)="downloadPdf()">
+                            <mat-icon>emoji_events</mat-icon>
+                          </button>
+                    </ng-container>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>

@@ -3,19 +3,18 @@ import { Router } from '@angular/router';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import {
-  AclInviteInterface,
   CookieInterface,
   LoginInterface,
   SessionInterface,
-  SignupInterface,
 } from '@shared/interfaces';
 import { environment } from '@environment';
-import { PermissionEnum } from '@shared/enums';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
+  public redirectUrl: string = '/';
+  public queryParams!: Record<string, string>;
   private authApi = 'api/auth';
   private cookieName: string = `${environment.application_name.replace(
     ' ',
@@ -32,30 +31,10 @@ export class AuthService {
       }
     };
   }
-
-  get isAdmin(): boolean {
-    return (
-      this.authenticated$.getValue()?.acl_active?.permission ===
-      PermissionEnum.ADMIN
-    );
-  }
-
+  
   login(loginAttempt: LoginInterface): Observable<SessionInterface> {
     return this.http
       .post<SessionInterface>(`${this.authApi}/login`, loginAttempt)
-      .pipe(tap((result) => this.setupSession(result)));
-  }
-
-  signup(
-    signupAttempt: SignupInterface,
-    invite: AclInviteInterface | null
-  ): Observable<SessionInterface> {
-    const url =
-      invite != null && invite?._id
-        ? `${this.authApi}/welcome/signup/${invite._id}`
-        : `${this.authApi}/welcome/signup`;
-    return this.http
-      .post<SessionInterface>(url, signupAttempt)
       .pipe(tap((result) => this.setupSession(result)));
   }
 
@@ -63,7 +42,7 @@ export class AuthService {
     this.clearCookie();
 
     if (navigate) {
-      this.router.navigate(['welcome/login']);
+      this.router.navigate(['/login']);
     }
     this.authenticated$.next(undefined);
   }

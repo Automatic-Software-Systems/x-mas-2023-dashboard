@@ -1,4 +1,5 @@
 import { IsDefined, IsOptional, IsString } from 'class-validator';
+import { IntegerType } from 'mongodb';
 
 export class PodcastDTO{
   @IsString()
@@ -13,4 +14,6 @@ export class PodcastDTO{
   @IsString()
   @IsOptional()
   _id:string;
+  enabled:boolean;
+  number:IntegerType;
 }

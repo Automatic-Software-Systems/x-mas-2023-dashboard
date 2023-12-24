@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { UserInterface } from '@shared/interfaces';
+import { BehaviorSubject, Observable, tap } from 'rxjs';
+import { LodgeUserInterface, UserInterface } from '@shared/interfaces';
 import { AuthService } from './auth.service';
 
 @Injectable({
@@ -9,8 +9,8 @@ import { AuthService } from './auth.service';
 })
 export class UserService {
   private baseUrl = 'api/user';
-  private userSubject: BehaviorSubject<UserInterface | null> =
-    new BehaviorSubject<UserInterface | null>(null);
+  private userSubject: BehaviorSubject<LodgeUserInterface | null> =
+    new BehaviorSubject<LodgeUserInterface | null>(null);
 
   constructor(private http: HttpClient, private authService: AuthService) {
     this.authService.authenticated$.subscribe((session) => {
@@ -23,16 +23,13 @@ export class UserService {
   }
 
   private fetchUser() {
-    this.http
-      .get<UserInterface>(this.baseUrl)
-      .subscribe((user) => this.userSubject.next(user));
+    return this.http
+      .get<LodgeUserInterface>(this.baseUrl)
+      .pipe(tap((user) => this.userSubject.next(user)))
   }
 
-  getUser(): Observable<UserInterface | null> {
-    if (this.userSubject.value == null) {
-      this.fetchUser();
-    }
-    return this.userSubject;
+  getUser(): Observable<LodgeUserInterface> {
+    return this.fetchUser();
   }
 
   patchUser(
@@ -40,7 +37,7 @@ export class UserService {
   ) {
     const updates = { ...this.userSubject.value, ...userChanges };
     this.http
-      .patch<UserInterface>(this.baseUrl, updates)
+      .patch<LodgeUserInterface>(this.baseUrl, updates)
       .subscribe((result) => this.userSubject.next(result));
   }
 

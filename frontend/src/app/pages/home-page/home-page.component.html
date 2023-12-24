@@ -1,22 +1,5 @@
-<h1>Welcome Home</h1>
-
-<ui-page>
-  <div class="fade-in">
-    <ui-card>
-      <h2>This is your starter Home Page</h2>
-      <p>
-        Use this to display chats, metrics, discussion boards, or whatever you like.
-      </p>
-    </ui-card>
-  </div>
-  <div sideboard>
-    <ui-card>
-      <p>You can also put other cards or components over here in the sideboard.</p>
-    </ui-card>
-  </div>
-</ui-page>
-
-<ui-loader
-  *ngIf="loading"
-  [message]="'Loading Home Dashboard'"
-></ui-loader>
+<mat-tab-group (selectedIndexChange)="onTabChange($event)">
+  <mat-tab label="Podcast"><div class="tab-content" *ngIf="showTabPodcast" ><podcast></podcast></div></mat-tab>
+  <mat-tab label="Charaktere"><div class="tab-content" *ngIf="showTabChars"><chars></chars></div></mat-tab>
+  <!-- <mat-tab label="Andere Ermittler"><div class="tab-content" *ngIf="showTabOthers"><others></others></div></mat-tab> -->
+</mat-tab-group>

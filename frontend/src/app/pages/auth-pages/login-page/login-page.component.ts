@@ -10,20 +10,21 @@ import { Router, RouterModule } from '@angular/router';
 import { UiModule } from '@ui';
 import { AuthService } from '@services';
 import { environment } from '@environment';
+import { MaterialModule } from 'src/material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @Component({
   selector: 'page-login',
   templateUrl: './login-page.component.html',
   styleUrls: ['../auth.shared.scss'],
   standalone: true,
-  imports: [CommonModule, UiModule, ReactiveFormsModule, RouterModule],
+  imports: [CommonModule, UiModule, ReactiveFormsModule, RouterModule, MaterialModule, FlexLayoutModule],
 })
 export class LoginPageComponent implements OnInit {
   login!: UntypedFormGroup;
   loginError: string | null = null;
   appName: string = environment.application_name;
-  imageUrl: string =
-    'https://images.unsplash.com/photo-1493612276216-ee3925520721?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80';
+  imageUrl: string ='https://ass-projects.de/founders/xmas-2023-files/-/raw/main/images/die_loge.png';
 
   constructor(
     private fb: UntypedFormBuilder,
@@ -40,7 +41,7 @@ export class LoginPageComponent implements OnInit {
 
   initLoginForm() {
     this.login = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
+      name: ['', [Validators.required]],
       password: ['', Validators.required],
     });
   }
@@ -48,7 +49,14 @@ export class LoginPageComponent implements OnInit {
   attemptLogin() {
     if (this.login.valid) {
       this.authService.login(this.login.value).subscribe({
-        next: () => this.router.navigate(['/']),
+        next: () => {
+          const redirectUrl = this.authService.redirectUrl || '/';
+          const queryParams = this.authService.queryParams
+          console.log(redirectUrl)
+          console.log(queryParams)
+          this.router.navigate([redirectUrl], { queryParams });
+          this.authService.redirectUrl = '/';
+        },
         error: (err) => (this.loginError = err.error.message),
       });
     }

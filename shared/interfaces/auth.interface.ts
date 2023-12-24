@@ -1,6 +1,5 @@
 import { LodgeUserInterface } from "./user.interface";
 import { PermissionEnum } from "../enums";
-import { AclInterface } from "./acl.interface";
 
 export interface LoginInterface {
   name: string;

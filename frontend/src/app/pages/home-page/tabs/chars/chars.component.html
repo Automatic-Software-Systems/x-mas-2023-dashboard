@@ -1,0 +1,20 @@
+<div fxLayout="row wrap" fxLayoutGap="16px grid" *ngIf="$chars | async as chars" >
+    <div fxFlex="50%" class="box" *ngFor="let char of chars">
+        <mat-card class="char-card" [ngClass]="{ 'disabled-char': !char.enabled }">
+            <mat-card-header>
+                <h3>{{char.name}}</h3>
+            </mat-card-header>
+            <ng-container *ngIf="char.imgUrl; else noImage" >
+                <img class="char-image" mat-card-image src="{{char.imgUrl}}" />
+            </ng-container>
+            <ng-template #noImage>
+                <img class="char-image" mat-card-image src="https://ass-projects.de/founders/xmas-2023-files/-/raw/main/images/unkownPerson.png" />
+            </ng-template>
+            <mat-card-content class="char-content">
+                <div>{{char.description}}</div>
+            </mat-card-content>
+            <mat-card-actions>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>
