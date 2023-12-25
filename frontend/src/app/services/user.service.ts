@@ -32,6 +32,10 @@ export class UserService {
     return this.fetchUser();
   }
 
+  getOthers():Observable<LodgeUserInterface[]>{
+    return this.http.get<LodgeUserInterface[]>(this.baseUrl+"/members");
+  }
+
   patchUser(
     userChanges: { email: string } | { phone: string } | { name: string }
   ) {

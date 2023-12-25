@@ -1,5 +1,5 @@
 <mat-tab-group (selectedIndexChange)="onTabChange($event)">
   <mat-tab label="Podcast"><div class="tab-content" *ngIf="showTabPodcast" ><podcast></podcast></div></mat-tab>
   <mat-tab label="Charaktere"><div class="tab-content" *ngIf="showTabChars"><chars></chars></div></mat-tab>
-  <!-- <mat-tab label="Andere Ermittler"><div class="tab-content" *ngIf="showTabOthers"><others></others></div></mat-tab> -->
+  <mat-tab label="Andere Ermittler"><div class="tab-content" *ngIf="showTabOthers"><others></others></div></mat-tab>
 </mat-tab-group>
