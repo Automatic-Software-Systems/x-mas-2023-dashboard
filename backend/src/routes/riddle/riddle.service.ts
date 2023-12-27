@@ -105,6 +105,7 @@ killer = "Peter";
         element.name = "Noch nicht verfügbar";
         element.audioUrl = "";
         element._id = "Häckermans Haus"
+        element.imageUrl = ""
       }
     });
 
