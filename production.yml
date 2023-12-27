@@ -2,7 +2,7 @@ version: '3.1'
 
 services:
   mongo-db:
-    image:  mongo:7.0.4
+    image:  mongo:5.0.0
     container_name: mongo_db
     networks:
       - useerdb
